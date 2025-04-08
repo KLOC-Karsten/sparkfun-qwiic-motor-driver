@@ -7,8 +7,9 @@
 with HAL.I2C;
 
 generic
-   Port    : not null HAL.I2C.Any_I2C_Port;
-package Grove_I2C_Motor_Driver is
+   Port     : not null HAL.I2C.Any_I2C_Port;
+   I2C_Addr : HAL.I2C.I2C_Address;
+package Sparkfun_Qwiic_Motor_Driver is
 
    type Motor_Direction is (CCW, CW);
    for Motor_Direction use (CCW => 1, CW => 2);
@@ -28,4 +29,4 @@ package Grove_I2C_Motor_Driver is
                     Speed_2 : Motor_Speed;
                     Success : out Boolean);
 
-end Grove_I2C_Motor_Driver;
+end Sparkfun_Qwiic_Motor_Driver;

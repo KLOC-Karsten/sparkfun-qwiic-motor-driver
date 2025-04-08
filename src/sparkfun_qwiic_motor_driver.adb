@@ -7,9 +7,27 @@
 with HAL; use HAL;
 with HAL.I2C; use HAL.I2C;
 
-package body Grove_I2C_Motor_Driver is
+package body Sparkfun_Qwiic_Motor_Driver is
 
-   --  Reference: https://github.com/Seeed-Studio/Grove_I2C_Motor_Driver_v1_3/
+   --  Reference:
+   --  https://github.com/sparkfun/
+   --   SparkFun_Serial_Controlled_Motor_Driver_Arduino_Library
+
+   --  Write to I2C register.
+   procedure Write_Register (Offset  : UInt8;
+                             Data    : UInt8;
+                             Success : out Boolean)
+   is
+      Status : HAL.I2C.I2C_Status;
+   begin
+      Port.Mem_Write (Addr          => I2C_Addr,
+                      Mem_Addr      => UInt16 (Offset),
+                      Mem_Addr_Size => Memory_Size_8b,
+                      Data          => (1 => Data),
+                      Status        => Status);
+
+      Success := Status = HAL.I2C.Ok;
+   end Write_Register;
 
    --  I2C command definitions
    Direction_Set     : constant UInt16 := 16#aa#;
@@ -85,4 +103,4 @@ package body Grove_I2C_Motor_Driver is
       Success := Status = HAL.I2C.Ok;
    end Direction;
 
-end Grove_I2C_Motor_Driver;
+end Sparkfun_Qwiic_Motor_Driver;

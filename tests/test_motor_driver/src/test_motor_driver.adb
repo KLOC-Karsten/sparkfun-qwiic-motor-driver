@@ -1,5 +1,5 @@
 --
---  Demonstration program for the Grove I2C Motor Driver library.
+--  Demonstration program for the Sparfun Qwicc Motor Driver library.
 --  Target is a RP Pico.
 --
 
@@ -10,7 +10,7 @@ with RP.I2C_Master;
 with HAL; use HAL;
 with HAL.I2C;
 with Pico;
-with Grove_I2C_Motor_Driver;
+with Sparkfun_Qwiic_Motor_Driver;
 
 procedure Test_Motor_Driver is
 
@@ -19,7 +19,7 @@ procedure Test_Motor_Driver is
    Port    : RP.I2C_Master.I2C_Master_Port renames RP.Device.I2CM_0;
    Success : Boolean;
 
-   package Driver is new Grove_I2C_Motor_Driver
+   package Driver is new Sparkfun_Qwiic_Motor_Driver
       (Port => Port'Access);
 
    SDA    : GPIO_Point := Pico.GP8;

@@ -1,5 +1,5 @@
-name = "test_motor_driver"
-description = "Test application for the Grove I2C motor driver"
+name = "mini_robot"
+description = "Sample program for the SparkFun motor driver API. "
 version = "0.1.0-dev"
 
 authors = ["Karsten Lueth"]
@@ -7,9 +7,9 @@ maintainers = ["Karsten Lueth <kl@kloc-consulting.de>"]
 maintainers-logins = ["KLOC-Karsten"]
 licenses = "BSD-3-Clause"
 website = "https://github.com/KLOC-Karsten/sparkfun-qwiic-motor-driver"
-tags = ["test", "motor-driver", "grove", "hal"]
+tags = ["robot", "motordriver", "pico", "test", "embedded"]
 
-executables = ["test_motor_driver"]
+executables = ["mini_robot"]
 
 [[depends-on]]
 pico_bsp = "^2.2.0"
@@ -17,3 +17,6 @@ grove_i2c_motor_driver = "*"
 
 [[pins]]
 grove_i2c_motor_driver = {path = "../.."}
+
+[[depends-on]]
+pico_ultrasonic_ranger = "~0.1.0"

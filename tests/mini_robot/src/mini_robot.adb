@@ -104,6 +104,7 @@ begin
    end loop;
 
    --  Enable the driver.
+   Driver.Set_Inversion_Mode (0, True, Success);
    Drive_Forwards;
    Driver.Set_Enable (True, Success);
 
@@ -113,12 +114,11 @@ begin
          when Forwards =>
             --  Check the distance
             Pico.LED.Set;
+            Wait_Some_Time;
             Ranger.Measure (Distance, Success);
             if Success and then Distance < Limit then
                --  Goto State Stop
                State := Stop;
-            else
-               Wait_Some_Time;
             end if;
          when Stop =>
             Pico.LED.Clear;
@@ -132,7 +132,7 @@ begin
             State := Backwards;
          when Backwards =>
             Drive_Backwards;
-            Stop_Motors;
+            Wait_Some_Time;
             State := Halt;
          when Halt =>
             Pico.LED.Clear;

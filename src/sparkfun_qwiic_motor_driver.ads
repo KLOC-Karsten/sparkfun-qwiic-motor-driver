@@ -34,4 +34,8 @@ package Sparkfun_Qwiic_Motor_Driver is
                         Speed   : Motor_Speed;
                         Success : out Boolean);
 
+   procedure Set_Inversion_Mode (Motor   : Motor_ID;
+                                 Invert  : Boolean;
+                                 Success : out Boolean);
+
 end Sparkfun_Qwiic_Motor_Driver;

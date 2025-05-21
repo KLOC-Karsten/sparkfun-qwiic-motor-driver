@@ -14,10 +14,12 @@ package body Sparkfun_Qwiic_Motor_Driver is
    --   SparkFun_Serial_Controlled_Motor_Driver_Arduino_Library
 
    --  I2C command definitions
-   SCMD_ID            : constant UInt8 := 16#01#;
-   SCMD_MA_DRIVE      : constant UInt8 := 16#20#;
-   SCMD_DRIVER_ENABLE : constant UInt8 := 16#70#;
-   SCMD_STATUS_1      : constant UInt8 := 16#77#;
+   SCMD_ID            :  constant UInt8 := 16#01#;
+   SCMD_MOTOR_A_INVERT : constant UInt8 := 16#12#;
+   --  SCMD_MOTOR_B_INVERT : constant UInt8 := 16#13#;
+   SCMD_MA_DRIVE       : constant UInt8 := 16#20#;
+   SCMD_DRIVER_ENABLE  : constant UInt8 := 16#70#;
+   SCMD_STATUS_1       : constant UInt8 := 16#77#;
 
    --  SCMD_STATUS_1 bits
    SCMD_ENUMERATION_BIT  : constant UInt8 := 16#01#;
@@ -69,6 +71,21 @@ package body Sparkfun_Qwiic_Motor_Driver is
    begin
       Write_Register (Offset, Data, Success);
    end Set_Drive;
+
+   procedure Set_Inversion_Mode (Motor   : Motor_ID;
+                                 Invert  : Boolean;
+                                 Success : out Boolean)
+   is
+      Offset : constant UInt8 := SCMD_MOTOR_A_INVERT + UInt8 (Motor);
+      Data   : UInt8;
+   begin
+      if Invert then
+         Data := 1;
+      else
+         Data := 0;
+      end if;
+      Write_Register (Offset, Data, Success);
+   end Set_Inversion_Mode;
 
    procedure Set_Enable (Enable  : Boolean;
                          Success : out Boolean) is

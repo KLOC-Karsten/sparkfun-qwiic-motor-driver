@@ -1,6 +1,6 @@
 name = "mini_robot"
 description = "Sample program for the SparkFun motor driver API. "
-version = "0.1.0-dev"
+version = "0.1.0"
 
 authors = ["Karsten Lueth"]
 maintainers = ["Karsten Lueth <kl@kloc-consulting.de>"]
@@ -13,10 +13,10 @@ executables = ["mini_robot"]
 
 [[depends-on]]
 pico_bsp = "^2.2.0"
-grove_i2c_motor_driver = "*"
+sparkfun_qwiic_motor_driver = "*"
 
 [[pins]]
-grove_i2c_motor_driver = {path = "../.."}
+sparkfun_qwiic_motor_driver = {path = "../.."}
 
 [[depends-on]]
 pico_ultrasonic_ranger = "~0.1.0"

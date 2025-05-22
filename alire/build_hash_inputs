@@ -1,6 +1,0 @@
-dependency:hal=1.0.0=25664c9c7cc8782def9c8693764aa19a9b4b73f0753bc58d3074debb1d8424ae
-external:GROVE_I2C_MOTOR_DRIVER_LIBRARY_TYPE=default
-external:LIBRARY_TYPE=default
-profile:grove_i2c_motor_driver=RELEASE
-switches:grove_i2c_motor_driver=-O3,-fdata-sections,-ffunction-sections,-gnatW8,-gnatn
-version:gnat_arm_elf=14.2.1

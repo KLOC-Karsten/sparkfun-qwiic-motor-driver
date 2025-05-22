@@ -1,6 +1,6 @@
 name = "grove_i2c_motor_driver"
 description = "Interface to the Grove I2C motor driver."
-version = "0.1.0-dev"
+version = "0.1.0"
 
 authors = ["Karsten Lueth"]
 maintainers = ["Karsten Lueth <kl@kloc-consulting.de>"]

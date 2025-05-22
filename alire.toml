@@ -1,5 +1,5 @@
-name = "grove_i2c_motor_driver"
-description = "Interface to the Grove I2C motor driver."
+name = "sparkfun-qwiic-motor-driver"
+description = "Interface to the SparkFun Qwiic motor driver."
 version = "0.1.0"
 
 authors = ["Karsten Lueth"]
@@ -7,7 +7,7 @@ maintainers = ["Karsten Lueth <kl@kloc-consulting.de>"]
 maintainers-logins = ["KLOC-Karsten"]
 licenses = "BSD-3-Clause"
 website = "https://github.com/KLOC-Karsten/sparkfun-qwiic-motor-driver"
-tags = ["hal", "motor-driver", "grove", "i2c"]
+tags = ["hal", "motor-driver", "sparkfun", "i2c"]
 
 
 [[depends-on]]

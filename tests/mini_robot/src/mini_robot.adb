@@ -60,13 +60,13 @@ procedure Mini_Robot is
 
    procedure Turn_Robot is
    begin
-      Driver.Set_Drive (0, -45, Success);
-      Driver.Set_Drive (1, 0, Success);
+      Driver.Set_Drive (0, -70, Success);
+      Driver.Set_Drive (1, -45, Success);
    end Turn_Robot;
 
    procedure Wait_Some_Time is
    begin
-      RP.Device.Timer.Delay_Milliseconds (1000);
+      RP.Device.Timer.Delay_Milliseconds (1200);
    end Wait_Some_Time;
 
 begin

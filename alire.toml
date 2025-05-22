@@ -6,10 +6,9 @@ authors = ["Karsten Lueth"]
 maintainers = ["Karsten Lueth <kl@kloc-consulting.de>"]
 maintainers-logins = ["KLOC-Karsten"]
 licenses = "BSD-3-Clause"
-website = ""
+website = "https://github.com/KLOC-Karsten/sparkfun-qwiic-motor-driver"
 tags = ["hal", "motor-driver", "grove", "i2c"]
 
-[[depends-on]]
 
 [[depends-on]]
 hal = "^1.0.0"

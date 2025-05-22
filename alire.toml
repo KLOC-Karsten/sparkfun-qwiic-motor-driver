@@ -1,4 +1,4 @@
-name = "sparkfun-qwiic-motor-driver"
+name = "sparkfun_qwiic_motor_driver"
 description = "Interface to the SparkFun Qwiic motor driver."
 version = "0.1.0"
 
